@@ -1,6 +1,6 @@
-# django-example-template
+# django-example
 
-Djangoのサンプルコードを作るためのテンプレートです。
+Djangoのサンプルコードです。
 
 ## パッケージ
 
