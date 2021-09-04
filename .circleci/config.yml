@@ -1,0 +1,29 @@
+version: 2.1
+jobs:
+  build_and_test:
+    docker:
+      - image: cimg/python:3.9
+        environment:
+          - LANG: ja_JP.UTF-8
+          - LANGUAGE: ja_JP.UTF-8
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      - run:
+          command: |
+            python -m venv venv
+            . venv/bin/activate
+            pip install -r requirements.txt
+
+      - run:
+          name: make ci
+          command: make ci
+
+workflows:
+  version: 2
+  main:
+    jobs:
+      - build_and_test
