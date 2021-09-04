@@ -8,3 +8,4 @@ python3 -m venv venv
 # Lint
 black apps config --check
 flake8
+isort apps -c
