@@ -1,1 +1,27 @@
-[]
+- model: example.payee
+  pk: 1
+  fields:
+    name: Amazon
+    is_active: true
+- model: example.payee
+  pk: 2
+  fields:
+    name: ヨドバシ
+    is_active: true
+- model: example.payee
+  pk: 3
+  fields:
+    name: どこか
+    is_active: false
+- model: example.payment
+  pk: 1
+  fields:
+    date: 2021-09-04
+    payee: 3
+    amount: 100
+- model: example.payment
+  pk: 2
+  fields:
+    date: 2021-09-04
+    payee: 1
+    amount: 200
