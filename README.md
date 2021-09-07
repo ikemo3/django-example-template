@@ -22,8 +22,7 @@ Djangoのサンプルコードです。
 ```sh
 python3 -m venv venv
 source venv/bin/activate
-python manage.py migrate
-python manage.py runserver
+./start.sh
 ```
 
 http://localhost:8000/ でアクセスできます。
