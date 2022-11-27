@@ -2,6 +2,26 @@
 <head>
 </head>
 <body>
-Hello!
+
+<h2>デフォルト</h2>
+
+<ul>
+    {% for item in object_list %}
+    <li>
+        {{ item }}
+    </li>
+    {% endfor %}
+</ul>
+
+<h2>ソート済み</h2>
+
+<ul>
+    {% for item in ordered_list %}
+    <li>
+        {{ item }}
+    </li>
+    {% endfor %}
+</ul>
+
 </body>
 </html>
