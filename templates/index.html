@@ -1,0 +1,98 @@
+<html>
+<head>
+    <style>
+        table, tr, th, td {
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<table>
+    <tr>
+        <th></th>
+        <th>GET</th>
+        <th>POST</th>
+    </tr>
+
+    <tr>
+        <td>関数ベース</td>
+        <td>
+            <a href="{% url 'func' %}">GET</a>
+        </td>
+        <td>
+            <form method="post" action="{% url 'func' %}">
+                {% csrf_token %}
+                <button>POST</button>
+            </form>
+        </td>
+    </tr>
+
+    <tr>
+        <td>デフォルト</td>
+        <td>
+            <a href="{% url 'vanilla' %}">GET</a>
+        </td>
+        <td>
+            <form method="post" action="{% url 'vanilla' %}">
+                {% csrf_token %}
+                <button>POST(405エラー)</button>
+            </form>
+        </td>
+    </tr>
+
+    <tr>
+        <td>post()実装</td>
+        <td>
+            <a href="{% url 'post-support' %}">GET</a>
+        </td>
+        <td>
+            <form method="post" action="{% url 'post-support' %}">
+                {% csrf_token %}
+                <button>POST</button>
+            </form>
+        </td>
+    </tr>
+
+    <tr>
+        <td>post() + http_method_names</td>
+        <td>
+            <a href="{% url 'post-with-http-method-names' %}">GET</a>
+        </td>
+        <td>
+            <form method="post" action="{% url 'post-with-http-method-names' %}">
+                {% csrf_token %}
+                <button>POST(405エラー)</button>
+            </form>
+        </td>
+    </tr>
+
+    <tr>
+        <td>http_method_namesなし</td>
+        <td>
+            <a href="{% url 'no-http-method-names' %}">GET</a>
+        </td>
+        <td>
+            <form method="post" action="{% url 'no-http-method-names' %}">
+                {% csrf_token %}
+                <button>POST(405エラー)</button>
+            </form>
+        </td>
+    </tr>
+
+    <tr>
+        <td>http_method_namesあり</td>
+        <td>
+            <a href="{% url 'http-method-names' %}">GET</a>
+        </td>
+        <td>
+            <form method="post" action="{% url 'no-http-method-names' %}">
+                {% csrf_token %}
+                <button>POST(405エラー)</button>
+            </form>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
