@@ -1,5 +1,5 @@
 black==23.9.1
-django==4.2.5
+django==4.2.6
 django-debug-toolbar==4.2.0
 flake8==6.1.0
 isort==5.12.0
